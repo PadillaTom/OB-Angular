@@ -19,4 +19,9 @@ export class TaskListComponent {
     completed: true,
     level: Levels.Urgent,
   };
+
+  // Deletion:
+  handleDelete(task: ITask) {
+    alert('[Task-List] handleDelete -> ' + task.title);
+  }
 }

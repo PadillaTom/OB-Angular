@@ -1,5 +1,5 @@
 <h4>Tus Tareas:</h4>
 
 <!-- Visualizar todas mis Tasks -->
-<app-task [task]="task1"></app-task>
-<app-task [task]="task2"></app-task>
+<app-task [task]="task1" (deleteTaskEmitter)="handleDelete($event)"></app-task>
+<app-task [task]="task2" (deleteTaskEmitter)="handleDelete($event)"></app-task>

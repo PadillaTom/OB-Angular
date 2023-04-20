@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITask } from 'src/app/models/interfaces/Task.interface';
 
 @Component({
@@ -8,8 +8,9 @@ import { ITask } from 'src/app/models/interfaces/Task.interface';
 })
 export class TaskComponent {
   @Input() task: ITask | undefined;
+  @Output() deleteTaskEmitter: EventEmitter<ITask> = new EventEmitter<ITask>();
 
-  handleDelete() {
-    console.log('[TASK] handleDelete(): ' + this.task?.title);
+  onTaskDelete() {
+    this.deleteTaskEmitter.emit(this.task);
   }
 }
